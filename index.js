@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv"
 import userRouter from "./routes/userRouter.js"
+import customerRouter from "./routes/customerRouter.js"
 import mongoose from "mongoose"
 
 dotenv.config()
@@ -28,6 +29,7 @@ app.use((req, res, next) => {
 app.use(express.json({ limit: '10mb' }))
 
 app.use('/user',userRouter)
+app.use('/customer',customerRouter)
 app.get('/', (req, res) => res.json({ message: 'Welcome to our API' }));
 app.use((req, res) =>
   res.status(404).json({ success: false, message: 'Not Found' })
