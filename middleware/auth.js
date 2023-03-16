@@ -8,6 +8,7 @@ const auth = async (req, res, next) => {
   try {
     //frontend header `Bearer ${currentUser.token}`
     const token = req.headers.authorization.split(' ')[1];
+    console.log(token)
     //check if its google token since tokens are > 1000 chars
     const googleToken = token.length > 1000;
     if (googleToken) {
