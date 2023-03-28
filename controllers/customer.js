@@ -28,6 +28,7 @@ export const createCustomer = tryCatch(async (req, res) => {
  export const getAllCustomers = tryCatch(async (req, res) => {
     //if current user exists
     const customers = await Customer.find({});
+    // console.log("customers",customers)
     //get all customers list
     res.status(200).json({
         success: true,
