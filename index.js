@@ -3,6 +3,7 @@ import dotenv from "dotenv"
 import userRouter from "./routes/userRouter.js"
 import customerRouter from "./routes/customerRouter.js"
 import serviceRouter from "./routes/serviceRouter.js";
+import appointmentRouter from "./routes/appointmentRouter.js";
 import mongoose from "mongoose"
 
 
@@ -33,6 +34,7 @@ app.use(express.json({ limit: '10mb' }))
 app.use('/user',userRouter)
 app.use('/customer',customerRouter)
 app.use('/service',serviceRouter)
+app.use('/appointment',appointmentRouter)
 app.get('/', (req, res) => res.json({ message: 'Welcome to our API' }));
 app.use((req, res) =>
   res.status(404).json({ success: false, message: 'Not Found' })
